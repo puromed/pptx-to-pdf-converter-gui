@@ -1,0 +1,21 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# PyInstaller files
+build/
+dist/
+*.spec
+
+# VS Code settings
+.vscode/
+
+# Log files (optional - keep if you want users to see example logs)
+# conversion.log
+# conversion,log # The one with a comma you had earlier
+
+# Environment files (if you were using virtual environments)
+venv/
+*.env
