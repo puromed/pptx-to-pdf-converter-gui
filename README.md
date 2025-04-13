@@ -6,7 +6,7 @@ This project provides a user-friendly Graphical User Interface (GUI) application
 
 The application leverages Microsoft PowerPoint's own conversion capabilities through automation, ensuring high fidelity in the resulting PDFs.
 
-![Screenshot of the GUI] (Optional: Add a link to a screenshot later)
+
 
 ## Core Features
 
@@ -26,7 +26,7 @@ The application leverages Microsoft PowerPoint's own conversion capabilities thr
 This is the easiest way for most users to get started:
 
 1.  **Download the Executable:**
-    *   Navigate to the [**Releases**](link-to-your-releases-page-later) page of this GitHub repository.
+    *   Navigate to the [**Releases**](https://github.com/puromed/pptx-to-pdf-converter-gui/releases/tag/v1.0.0) page of this GitHub repository.
     *   Look for the latest release version (e.g., `v1.0.0`).
     *   Under the "Assets" section for that release, download the file named `PPTXtoPDF_vX.Y.Z.exe` (the version numbers will match the release).
 
@@ -65,7 +65,7 @@ If you want to modify the code or run it directly using Python:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [Your-GitHub-Repo-URL-Here]
+    git clone https://github.com/puromed/pptx-to-pdf-converter-gui.git
     cd [Your-Repo-Name]
     ```
 2.  **Set up Environment (Recommended):** Create and activate a Python virtual environment.
@@ -95,8 +95,11 @@ If you want to modify the code or run it directly using Python:
 
 ## Contributing
 
-[Detail how others can contribute. E.g., "Contributions are welcome! Please fork the repository, create a feature branch, make your changes, and submit a pull request. Please report any bugs or suggest features via the GitHub Issues page."]
+Contributions are welcome! If you'd like to help improve this project, please follow these steps:
+
+  **Report Bugs or Suggest Features:** Use the [GitHub Issues](https://github.com/puromed/pptx-to-pdf-converter-gui/issues) page for this repository to report any bugs you find or suggest new features or improvements. Please provide as much detail as possible.
+
 
 ## License
 
-[Specify the license under which you are releasing this code. Common choices for open source include the MIT License or Apache License 2.0. You can add a `LICENSE` file to your repository.]
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
