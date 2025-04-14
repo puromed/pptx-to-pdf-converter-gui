@@ -69,27 +69,30 @@ class PPTXtoPDFConverter:
                 output_folder = input_folder
 
             # Get all PPTX files
+            ppt_files = list(input_folder.glob("*.ppt"))
             pptx_files = list(input_folder.glob("*.pptx"))
+            all_powerpoint_files = ppt_files + pptx_files
 
-            if not pptx_files:
+            # Replace pptx files with ppt files if pptx files are not found
+            if not all_powerpoint_files: # <- Check the combine list
                 # REMOVED: print(f"No PPTX files found in {input_folder}") 
-                self.logger.warning(f"No PPTX files found in {input_folder}")
+                self.logger.warning(f"No PPTX or PPT files found in {input_folder}")
                 return False # Indicate no files found or failure
 
             # Process files with progress bar
             success_count = 0
-            # REMOVED: print(f"\nFound {len(pptx_files)} PPTX files in {input_folder}")
+            self.logger.info(f"Starting batch conversion for {len(all_powerpoint_files)} files in {input_folder}") # <- use combine list length
 
             # Process files with progress bar - disable output in  GUI mode
             # Pass disable=gui_mode to tqdm constructor
-            with tqdm(total=len(pptx_files), desc="Converting", disable=gui_mode) as pbar:
-                for pptx_file in pptx_files:
-                    output_path = output_folder / pptx_file.with_suffix('.pdf').name
+            with tqdm(total=len(all_powerpoint_files), desc="Converting", disable=gui_mode) as pbar:
+                for powerpoint_file in all_powerpoint_files:
+                    output_path = output_folder / powerpoint_file.with_suffix('.pdf').name
                     #REMOVED: print(f"\nConverting: {pptx_file.name}")
-                    self.logger.info(f"Batch converting: {pptx_file.name}") # Log instead of print
+                    self.logger.info(f"Batch converting: {powerpoint_file.name}") # Log instead of print
 
                     # Use a flag for clarity on conversion success/failure per file
-                    file_converted = self.convert_single_file(pptx_file, output_path, overwrite)
+                    file_converted = self.convert_single_file(powerpoint_file, output_path, overwrite)
                     if file_converted:
                         success_count += 1
                     # Still update pbar even if conversion failed,  to advance progress
@@ -97,7 +100,7 @@ class PPTXtoPDFConverter:
 
             #REMOVED:print(f"\nBatch conversion completed: {success_count}/{len(pptx_files)} files converted successfully")
             self.logger.info(
-                f"Batch conversion completed. {success_count}/{len(pptx_files)} files converted successfully")
+                f"Batch conversion completed. {success_count}/{len(all_powerpoint_files)} files converted successfully")
             return True
 
         except Exception as e:

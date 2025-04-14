@@ -95,7 +95,7 @@ class ConverterApp:
         
         input_path = filedialog.askopenfilename(
             title="Select PowerPoint File",
-            filetypes=(("PowerPoint files", "*.pptx"), ("All files", "*.*"))
+            filetypes=(("PowerPoint files", "*.pptx *.ppt" ), ("All files", "*.*"))
         )
         
         if not input_path: # User cancelled file selection
